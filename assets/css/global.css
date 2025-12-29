@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: "Neue Machina";
-    src: url(../fonts/Neue-Machina-Font-Family/NeueMachina-Regular.otf);
+    src: url("../fonts/Neue-Machina-Font-Family/NeueMachina-Regular.otf");
 }
 
 body {
@@ -22,7 +22,7 @@ body {
 
 .main::before {
     content: "";
-    background-image: url(../images/background.svg);
+    background-image: url("../images/background.svg");
     background-repeat: no-repeat;
     background-size: contain;
 
@@ -39,7 +39,7 @@ body {
 
 .main::after {
     content: "";
-    background-image: url(../images/background.svg);
+    background-image: url("../images/background.svg");
     background-repeat: no-repeat;
     background-size: contain;
 
