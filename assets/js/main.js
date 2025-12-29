@@ -38,13 +38,20 @@ function updateLanguages(profileData) {
 function updatePortifolio(profileData) {
     const portifolio = document.getElementById("profile.portifolio");
 
-    portifolio.innerHTML = profileData.portifolio.map((project) => {
-        return `
+    portifolio.innerHTML = profileData.portfolio
+        .map((project) => {
+            return `
         <li>
-            <h3> ${project} </h3>
+            <h3 ${project.github ? 'class="github"' : ""}> 
+                ${project.name}
+                </h3>
+                <a href="${project.url}" target="_blank">
+                    ${project.url}
+                </a>
         </li>
         `;
-    });
+        })
+        .join("");
 }
 
 (async () => {
@@ -52,4 +59,5 @@ function updatePortifolio(profileData) {
     updateProfileData(profileData);
     updateSoftSkills(profileData);
     updateLanguages(profileData);
+    updatePortifolio(profileData);
 })();
