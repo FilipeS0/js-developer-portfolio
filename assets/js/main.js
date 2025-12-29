@@ -19,7 +19,24 @@ function updateProfileData(profileData) {
     email.innerText = profileData.email;
 }
 
+function updateSoftSkills(profileData) {
+    const softSkills = document.getElementById("profile.skills.softSkills");
+
+    softSkills.innerHTML = profileData.skills.softSkills
+        .map((skill) => `<li>${skill}</li>`)
+        .join("");
+}
+
+function updateLanguages(profileData) {
+    const languages = document.getElementById("profile.languages");
+    languages.innerHTML = profileData.languages
+        .map((language) => `<li></li>`)
+        .join("");
+}
+
 (async () => {
     const profileData = await fetchProfileData();
     updateProfileData(profileData);
+    updateSoftSkills(profileData);
+    updateLanguages(profileData);
 })();
